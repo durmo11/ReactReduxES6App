@@ -1,7 +1,10 @@
-div.tally, div.voteCount {display:inline-block; width:50%;}
+div.tally{display:inline-block; width:50%;}
 div.voting {position:absolute; top:50%; left:50%; width:50%; min-width: 300px;transform:translate(-50%,-50%); text-align: center; padding:10px;background:#E0E0E0;}
 button {margin-bottom:10px !important;}
-div.results {padding:30px; background:#BFBFC0;width:100%;}
+div.results {padding:30px; background:#BFBFC0;width:100%; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);}
+div.results div.entry:nth-child(odd) h1 {background:black;color:white;}
 div.results div.entry:nth-child(even) h1 {background:white;}
-div.results h1 {width:100%; padding:5px; border-radius:2px;}
+div.results h1 {width:88%; display:inline-block; padding:5px;margin:5px 1%; vertical-align: top;}
+div.voteCount {width:10%; display: inline-block; text-align: center; color:white; background:black; padding:10px; font-size: 28px;}
 div.label {background:black;}
+div.results div.entry:nth-child(even) div.voteCount{background:white;color:black;}

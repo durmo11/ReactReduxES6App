@@ -22,7 +22,7 @@ export const Results = React.createClass({
         <div className="tally">
           {this.getEntries().map(entry =>
             <div key={entry} className="entry">
-            <h1>{entry}</h1>
+            <h1 className="entry">{entry}</h1>
             <div className="voteCount">
               {this.getVotes(entry)}
             </div>
