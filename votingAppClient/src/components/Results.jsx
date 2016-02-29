@@ -9,8 +9,11 @@ export const Results = React.createClass({
   getEntries: function() {
     return this.props.entries || [];
   },
-  getVotes: function() {
-      return this.props.tally || [];
+  getVotes: function(entry) {
+    if (this.props.tally && this.props.tally.has(entry)) {
+      return this.props.tally.get(entry);
+    }
+    return 0;
   },
   render: function() {
     return this.props.winner ?
@@ -20,12 +23,10 @@ export const Results = React.createClass({
           {this.getEntries().map(entry =>
             <div key={entry} className="entry">
             <h1>{entry}</h1>
+            <div className="voteCount">
+              {this.getVotes(entry)}
+            </div>
           </div>
-          )}
-        </div>
-        <div className="voteCount">
-          {this.getVotes().map(tally=>
-            <h1>{tally}</h1>
           )}
         </div>
       </div>;
